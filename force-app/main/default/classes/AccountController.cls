@@ -8,7 +8,7 @@ public class AccountController {
             }
         }   
         for(Contact con : [Select Id,Phone,AccountId From Contact where AccountId =: accMap.keyset()]){  
-            if(accMap.containskey(con.AccountId)){
+            if(accMap.containskey(con.AccountId)) {
                 con.Phone = accMap.get(con.AccountId).Phone;
                 conList.add(con);
             }   
